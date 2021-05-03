@@ -28,3 +28,12 @@ td{
     
 }
 
+tfoot{
+    width: 5px;
+    top: 500px;
+    position: relative;
+    font-size: 18px;
+
+
+
+}

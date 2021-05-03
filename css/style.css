@@ -2,3 +2,29 @@ img{
     width: 450px;
     margin-left: 400px;
 }
+
+th{
+    /* border: 2px solid green; */
+    width: 60px;
+    padding-left: 10px;
+    left: 70px;
+    top: 10px;
+    position: relative;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 20px;
+    
+    
+}
+
+td{
+    border: 3px solid green;
+    font-size: 20px;
+    padding-left: 10px;
+    top: 30px;
+    position: relative;
+    width:60px;
+    height: 50px;
+    
+}
+

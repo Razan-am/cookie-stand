@@ -14,9 +14,10 @@ function Stores(branchName, minNumOfCustPerHour, maxNumOfCustPerHour, AvgCookieS
     this.numOfCustPerHour = [];
     this.calculatCookiesPerHour = [];
     this.totalAmount = 0;
-    this.hoursTotal = [];
+    this.totalOfSalesPerDay = [];
     this.totals = 0;
 }
+
 Stores.prototype.randomNumber = function () {
     for (let num = 0; num < hourOperation.length; num++) {
         //generat random number
@@ -32,14 +33,22 @@ Stores.prototype.calculation = function () {
         //total number cookies per hour
         this.totalAmount += this.calculatCookiesPerHour[index];
 
+        this.totalOfSalesPerDay.push(Math.ceil(this.calculatCookiesPerHour[index] ));
+
+        this.totals += this.totalOfSalesPerDay[index];
+
 
     }
+    console.log(this.totalOfSalesPerDay);
+    console.log(this.totals);
 }
+
 
 let divEl = document.getElementById('container');
 
 let tavblEl = document.createElement('table');
 divEl.appendChild(tavblEl);
+
 Stores.prototype.render1 = function () {
 
 
@@ -67,34 +76,21 @@ Stores.prototype.render2 = function () {
     for (let calc = 0; calc < this.calculatCookiesPerHour.length; calc++) {
         let td2 = document.createElement('td');
         tBody.appendChild(td2);
-        td2.textContent = this.calculatCookiesPerHour[calc]
-
-
+        td2.textContent = this.calculatCookiesPerHour[calc];
     }
-
 
     let td3 = document.createElement('td');
     tBody.appendChild(td3);
     td3.textContent = this.totalAmount;
+
 }
-Stores.prototype.render3 = function () {
-    for (let total = 0; total < hourOperation.length; total++) {
-        this.hoursTotal.push(`${this.totals=+this.calculatCookiesPerHour[total]} ${this.branchName}`)
 
+Stores.prototype.render4 = function () {
+    let td4 = document.createElement('td');
+    tavblEl.appendChild(td4);
+    td4.textContent = `Totals: ${this.totalOfSalesPerDay}`;
 
-
-    }
-    console.log(this.hoursTotal)
-    console.log(this.totals);
 }
-// Stores.prototype.render4 = function(){
-//     let tFooter = document.createElement('tr');
-//     tavblEl.appendChild(tFooter);
-//     let footer1 = document.createElement('td');
-//     tFooter.appendChild(footer1);
-//     footer1.textContent = `Totals: ${this.calculatCookiesPerHour}`
-//     console.log(this.totals);
-// }
 
 
 let seattle = new Stores('Seattle', 23, 65, 6.3);
@@ -102,8 +98,7 @@ seattle.randomNumber();
 seattle.calculation();
 seattle.render1();
 seattle.render2();
-seattle.render3();
-// seattle.render4();
+seattle.render4();
 
 let tokyo = new Stores('Tokyo', 3, 24, 1.2);
 tokyo.randomNumber();

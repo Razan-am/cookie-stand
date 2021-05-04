@@ -12,12 +12,64 @@ body{
 
 }
 
+#about{
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 30px;
+    color: brown;
+    font-weight: bold;
+
+}
+
+p{
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 40PX;
+    margin-left: 10px;
+    color: brown;
+    font-weight: bold;
+}
+
+#fish1{
+    width: 300px;
+    float: right;
+    margin-top: -150px;
+}
+#fish2{
+    margin-top: -90px;
+    margin-left: 0px;
+}
+
+#cookie{
+    float: right;
+    border-radius: 100px;
+    border: brown 6px solid;
+}
+#family{
+    width: 80%;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+#information{
+    font-size: 20px;
+    top: 350px;
+    position: relative;
+    font-family: cursive;
+    color: burlywood;
+    background-color:teal;
+    height: 100px;
+    padding-left: 30px;
+    padding-top: 30px;
+    margin-left: 500px;
+}
+
 h1{
     font-size: 50px;
     font-family: 'Itim', cursive;
     padding-left: 450px;
-    color: brown;
-    background-color: burlywood;
+    color: burlywood;
+    background-color: brown;
 
 }
 
@@ -27,12 +79,36 @@ a{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: brown;
     margin-left: 30px;
-    top:30px;
+    top:-40px;
     position: relative;
     border: 3px solid burlywood;
     padding: 20px;
     border-radius: 30px;
     background-color: cornsilk;
+}
+
+#home{
+    top: 30px;
+}
+
+footer{
+    background-color: brown;
+    height: 50px;
+    margin-top: 10px;
+}
+.footer {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #000;
+    font-size:20px;
+    padding-top: 15px;
+    display: flex;
+    padding-bottom: 20px;
+    
+
+}
+
+#salesfooter{
+    margin-top: 130px;
 }
 
 th{

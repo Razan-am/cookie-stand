@@ -6,6 +6,7 @@ let brachesArray = [];
 
 let hourOperation = ['6:00am', '7:00am', '8:00am', '9:00am', '10:am', '11:am', '12pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 
+
 function Stores(branchName, minNumOfCustPerHour, maxNumOfCustPerHour, AvgCookieSalePerCust) {
     this.branchName = branchName;
     this.minNumOfCustPerHour = minNumOfCustPerHour;
@@ -14,8 +15,8 @@ function Stores(branchName, minNumOfCustPerHour, maxNumOfCustPerHour, AvgCookieS
     this.numOfCustPerHour = [];
     this.calculatCookiesPerHour = [];
     this.totalAmount = 0;
-    this.totalOfSalesPerDay = [];
-    this.totals = 0;
+    // this.totalOfSalesPerDay = 0;
+    // this.totals = 0;
     brachesArray.push(this);
 }
 console.log(brachesArray);
@@ -38,99 +39,121 @@ Stores.prototype.calculation = function () {
     }
 }
 
-Stores.prototype.total = function () {
-    for (let total = 0; total < brachesArray.length; total++) {
-        for (let i = 0; i < hourOperation; i++) {
-            this.totalOfSalesPerDay.push(Math.ceil(this.calculatCookiesPerHour[i]));
-            this.totals += this.calculatCookiesPerHour[i];
-            }
-        }
-        console.log(this.totalOfSalesPerDay);
-        console.log(this.totals);
-    }
 
 
-    let divEl = document.getElementById('container');
-
-    let tavblEl = document.createElement('table');
-    divEl.appendChild(tavblEl);
 
 
-    function render1() {
+let divEl = document.getElementById('container');
+
+let tavblEl = document.createElement('table');
+divEl.appendChild(tavblEl);
 
 
-        let tHeader1 = document.createElement('tr');
-        tavblEl.appendChild(tHeader1);
-        for (let th = 0; th < hourOperation.length; th++) {
-            let thel1 = document.createElement('th');
-            tHeader1.appendChild(thel1);
-            thel1.textContent = `${hourOperation[th]}`;
-        }
+function render1() {
+
+
+    let tHeader1 = document.createElement('tr');
+    tavblEl.appendChild(tHeader1);
+    for (let th = 0; th < hourOperation.length; th++) {
         let thel1 = document.createElement('th');
         tHeader1.appendChild(thel1);
-        thel1.textContent = 'Daily Location Total';
+        thel1.textContent = `${hourOperation[th]}`;
+    }
+    let thel1 = document.createElement('th');
+    tHeader1.appendChild(thel1);
+    thel1.textContent = 'Daily Location Total';
+}
+
+Stores.prototype.render2 = function () {
+
+    let tBody = document.createElement('tr');
+    tavblEl.appendChild(tBody);
+
+    let td1 = document.createElement('td');
+    tBody.appendChild(td1);
+    td1.textContent = this.branchName;
+
+    for (let calc = 0; calc < this.calculatCookiesPerHour.length; calc++) {
+        let td2 = document.createElement('td');
+        tBody.appendChild(td2);
+        td2.textContent = this.calculatCookiesPerHour[calc];
     }
 
-    Stores.prototype.render2 = function () {
+    let td3 = document.createElement('td');
+    tBody.appendChild(td3);
+    td3.textContent = this.totalAmount;
 
-        let tBody = document.createElement('tr');
-        tavblEl.appendChild(tBody);
+}
 
-        let td1 = document.createElement('td');
-        tBody.appendChild(td1);
-        td1.textContent = this.branchName;
+function render4() {
 
-        for (let calc = 0; calc < this.calculatCookiesPerHour.length; calc++) {
-            let td2 = document.createElement('td');
-            tBody.appendChild(td2);
-            td2.textContent = this.calculatCookiesPerHour[calc];
+
+    let tfooter = document.createElement('tr');
+    tavblEl.appendChild(tfooter);
+
+    let td4 = document.createElement('td');
+    tfooter.appendChild(td4)
+    td4.textContent = 'Totals:';
+
+    let totalOfSalesPerDay = 0;
+    let totals = 0;
+
+    for (let total = 0; total < hourOperation.length; total++) {
+        for (let i = 0; i < brachesArray.length; i++) {
+            totalOfSalesPerDay += brachesArray[i].calculatCookiesPerHour[total];
+            totals += brachesArray[i].totalAmount ;
+
         }
 
-        let td3 = document.createElement('td');
-        tBody.appendChild(td3);
-        td3.textContent = this.totalAmount;
 
+        let td5 = document.createElement('td');
+        tfooter.appendChild(td5);
+        td5.textContent = totalOfSalesPerDay;
     }
 
-    function render4() {
-        let td4 = document.createElement('td');
-        tavblEl.appendChild(td4);
-        td4.textContent = `Totals:`;
-
-    }
+    let td6 = document.createElement('td');
+    tfooter.appendChild(td6);
+    td6.textContent = totals;
 
 
-    let seattle = new Stores('Seattle', 23, 65, 6.3);
-    seattle.randomNumber();
-    seattle.calculation();
-    render1();
-    seattle.render2();
-    seattle.total();
+}
 
 
-    let tokyo = new Stores('Tokyo', 3, 24, 1.2);
-    tokyo.randomNumber();
-    tokyo.calculation();
-    tokyo.render2();
-
-    let dubai = new Stores('Dubai', 11, 38, 3.7);
-    dubai.randomNumber();
-    dubai.calculation();
-    dubai.render2();
 
 
-    let paris = new Stores('Paris', 20, 38, 2.3);
-    paris.randomNumber();
-    paris.calculation();
-    paris.render2();
+let seattle = new Stores('Seattle', 23, 65, 6.3);
+seattle.randomNumber();
+seattle.calculation();
+render1();
+seattle.render2();
 
 
-    let lima = new Stores('Lima', 2, 16, 4.6);
-    lima.randomNumber();
-    lima.calculation();
-    lima.render2();
 
-    render4();
+
+
+let tokyo = new Stores('Tokyo', 3, 24, 1.2);
+tokyo.randomNumber();
+tokyo.calculation();
+tokyo.render2();
+
+let dubai = new Stores('Dubai', 11, 38, 3.7);
+dubai.randomNumber();
+dubai.calculation();
+dubai.render2();
+
+
+let paris = new Stores('Paris', 20, 38, 2.3);
+paris.randomNumber();
+paris.calculation();
+paris.render2();
+
+
+let lima = new Stores('Lima', 2, 16, 4.6);
+lima.randomNumber();
+lima.calculation();
+lima.render2();
+
+render4();
 
 
 // let branch1 = {

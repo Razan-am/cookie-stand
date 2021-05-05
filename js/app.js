@@ -95,14 +95,16 @@ function render4() {
     tfooter.appendChild(td4)
     td4.textContent = 'Totals:';
 
-    
+
     let totals = 0;
 
     for (let total = 0; total < hourOperation.length; total++) {
+        let t = 0;
         let totalOfSalesPerDay = 0;
         for (let i = 0; i < brachesArray.length; i++) {
             totalOfSalesPerDay += brachesArray[i].calculatCookiesPerHour[total];
-            totals += brachesArray[i].totalAmount ;
+            t += brachesArray[i].totalAmount;
+            totals =t;
 
         }
 

@@ -40,9 +40,6 @@ Stores.prototype.calculation = function () {
 }
 
 
-
-
-
 let divEl = document.getElementById('container');
 
 let tavblEl = document.createElement('table');
@@ -121,18 +118,11 @@ function render4() {
 
 }
 
-
-
-
 let seattle = new Stores('Seattle', 23, 65, 6.3);
 seattle.randomNumber();
 seattle.calculation();
 render1();
 seattle.render2();
-
-
-
-
 
 let tokyo = new Stores('Tokyo', 3, 24, 1.2);
 tokyo.randomNumber();
@@ -144,7 +134,6 @@ dubai.randomNumber();
 dubai.calculation();
 dubai.render2();
 
-
 let paris = new Stores('Paris', 20, 38, 2.3);
 paris.randomNumber();
 paris.calculation();
@@ -155,7 +144,6 @@ let lima = new Stores('Lima', 2, 16, 4.6);
 lima.randomNumber();
 lima.calculation();
 lima.render2();
-
 
 
 

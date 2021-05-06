@@ -16,9 +16,27 @@
 </head>
 
 <body>
-     <a href="index.html" id="home">Home</a>
+    <a href="index.html" id="home">Home</a>
+   
     <div id="container">
-
+        <form action="" id="cookiestand">
+            <fieldset>
+                <legend>
+                    cookiestand
+                </legend>
+                <label for="branchName">Branch Name</label>
+                <input type="text" name="branchName" id="branchName" placeholder="Branchname">
+                <br>
+                <label for="min">The minimum number of customers per hour</label>
+                <input type="text" name="min" id="min"><br>
+                <label for="max">The maximum number of customers per hour</label>
+                <input type="text" name="max" id="max"><br>
+                <label for="avg">The average number of cookies purchased per customer</label>
+                <input type="text" name="avg" id="avg">
+                <label for="submit">Submit</label><br>
+                <input type="submit" value="add abranch">
+            </fieldset>
+        </form>
     </div>
     <footer id="salesfooter">
         <p class="footer">CopyRights pat's 2021</p>

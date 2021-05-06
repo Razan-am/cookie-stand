@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 img{
     width: 450px;
     margin-left: 450px;
@@ -108,16 +111,17 @@ footer{
 }
 
 #salesfooter{
-    margin-top: 130px;
+    margin-top: 180px;
 }
 
+
 th{
-        border: 5px solid burlywood;
-    width: 60px;
-    padding-left: 10px;
-    left: 75px;
+        border: 3px solid burlywood;
+    width: 40px;
+    /* padding-left:10px; */
+    left: 65px;
     top: 70px;
-    position: relative;
+    position:relative;
     font-size: 15px;
     text-align: center;
     padding-top: 20px;
@@ -126,15 +130,43 @@ th{
 }
 
 td{
-    border: 5px solid burlywood;
+    border: 3px solid burlywood;
     font-size: 20px;
-    padding-left: 10px;
+    /* padding-left: 10px; */
+    left: 5px;
     top: 70px;
     position: relative;
     width:60px;
+    text-align: center;
     height: 50px;
     color: brown;
     font-weight: bold;
     
 }
+fieldset{
+    border: 2px solid brown;
+    padding: 8px;
+    height: 330px;
+}
 
+#cookiestand{
+    float: right;
+    margin-right:30px;
+    margin-top: 65px;
+    font-family: cursive;
+    font-size: 12px;
+    font-weight: bold;
+
+}
+input[type=text]{
+    display: block;
+    padding-top: 10px;
+    text-align:justify;
+    box-sizing: border-box;
+    font-family: cursive;
+    margin-bottom: 10px;
+    
+}
+input[type=submit]{
+    /* margin-top: 30px; */
+}

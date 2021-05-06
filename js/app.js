@@ -19,7 +19,7 @@ function Stores(branchName, minNumOfCustPerHour, maxNumOfCustPerHour, AvgCookieS
     // this.totals = 0;
     brachesArray.push(this);
 }
-console.log(brachesArray);
+// console.log(brachesArray);
 Stores.prototype.randomNumber = function () {
     for (let num = 0; num < hourOperation.length; num++) {
         //generat random number
@@ -104,7 +104,7 @@ function render4() {
         for (let i = 0; i < brachesArray.length; i++) {
             totalOfSalesPerDay += brachesArray[i].calculatCookiesPerHour[total];
             t += brachesArray[i].totalAmount;
-            totals =t;
+            totals = t;
 
         }
 
@@ -156,9 +156,37 @@ lima.randomNumber();
 lima.calculation();
 lima.render2();
 
+
+
+
+//lab09
+
+let form1 = document.getElementById('cookiestand');
+form1.addEventListener('submit', addBranch);
+
+function addBranch(event) {
+    event.preventDefault();
+
+    let branchName = event.target.branchName.value;
+    let minNumOfCustPerHour = event.target.min.value;
+    let maxNumOfCustPerHour = event.target.max.value;
+    let AvgCookieSalePerCust = event.target.avg.value;
+
+    let newBranch = new Stores(branchName, minNumOfCustPerHour, maxNumOfCustPerHour, AvgCookieSalePerCust);
+
+    newBranch.randomNumber();
+    newBranch.calculation();
+    newBranch.render2();
+    tavblEl.deleteRow(6);
+    render4();
+
+}
+
 render4();
 
 
+
+//lab06
 // let branch1 = {
 
 //     branchName: 'Seattle',

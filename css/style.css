@@ -41,6 +41,7 @@ p{
 #fish2{
     margin-top: -320px;
     margin-left: 0px;
+    height: 500px;
 }
 
 #cookie{
@@ -54,18 +55,18 @@ p{
     font-size: 20px;
     top: 50px;
     position: relative;
-    font-family: cursive;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: burlywood;
     background-color:teal;
     height: 100px;
     padding-left: 30px;
-    padding-top: 30px;
+    padding-top: 10px;
     margin-left: 500px;
 }
 
 h1{
     font-size: 50px;
-    font-family: 'Itim', cursive;
+    font-family: 'Girassol', cursive;
     padding-left: 450px;
     color: burlywood;
     background-color: brown;
@@ -98,21 +99,21 @@ footer{
 footer img{
     margin-left: 0px;
     width: 160px;
-    margin-top: -120px;
+    margin-top: -110px;
 
 }
 #skyline{
     width: 260px;
 }
 footer p  {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #000;
     font-size:20px;
     padding-top: 15px;
 }
 #footer1{
     margin-left: 600px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #000;
     font-size:20px;
     font-style: italic;
@@ -121,37 +122,46 @@ footer p  {
 
 
 #salesfooter{
-    margin-top: 180px;
+    margin-top: 50px;
+}
+#salesfooter p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+    font-style: italic;
+}
+table{
+    box-sizing: border-box;
+    background-color: rgb(218, 196, 168);
+    margin-top:100px ;
+    background-size: 600px;
+
+
 }
 
-
 th{
-        border: 3px solid burlywood;
-    width: 40px;
-    /* padding-left:10px; */
-    left: 65px;
-    top: 70px;
+    border: 3px solid black;
+    width: 10px;
+    left: 60px;
     position:relative;
     font-size: 15px;
     text-align: center;
     padding-top: 20px;
     font-weight: bold;
+
     
 }
 
 td{
-    border: 3px solid burlywood;
-    font-size: 20px;
-    /* padding-left: 10px; */
-    left: 5px;
-    top: 70px;
+    border: 3px solid black;
+    font-size: 15px;
     position: relative;
     width:60px;
     text-align: center;
     height: 50px;
     color: brown;
     font-weight: bold;
-    
+    padding-top: 15px;
 }
 fieldset{
     border: 2px solid brown;
@@ -161,8 +171,8 @@ fieldset{
 
 #cookiestand{
     float: right;
-    margin-right:30px;
-    margin-top: 65px;
+    margin-right:28px;
+    margin-top: 20px;
     font-family: cursive;
     font-size: 12px;
     font-weight: bold;
